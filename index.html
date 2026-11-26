@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Grinch en Nuestra Escuela</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="logo">🎄 El Grinch <span>Escuela</span></div>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#escuela">Nuestra Escuela</a>
+        <a href="#actividades">Actividades</a>
+        <a href="#registro">Comunidad</a>
+    </nav>
+    <a href="#registro" class="btn-rojo-peque">¡Únete!</a>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>¡El Grinch llegó<br>a Nuestra Escuela!</h1>
+        <p>Únete a nuestra comunidad y celebremos juntos la magia de la Navidad</p>
+        <div class="botones">
+            <a href="#registro" class="btn-rojo">🎁 ¡Registrarme Ahora!</a>
+            <a href="#escuela" class="btn-blanco">Ver Actividades</a>
+        </div>
+    </div>
+    <div class="hero-grinch" id="grinch">💚</div>
+</section>
+
+<section class="bienvenida">
+    <h2>¡Bienvenidos a Nuestra Comunidad! 🎅</h2>
+    <p>Somos una comunidad escolar unida que celebra la Navidad con alegría, solidaridad y mucho corazón.</p>
+    <p class="contador">Ya somos <b id="contador">0</b> registrados 🎉</p>
+</section>
+
+<section id="escuela" class="escuela">
+    <div class="escuela-texto">
+        <span class="etiqueta">🏫 NUESTRA ESCUELA</span>
+        <h2>Un lugar donde<br>todos pertenecemos</h2>
+        <p>Nuestra escuela es más que un edificio, es el hogar de sueños, amistades y aprendizaje. Como el Grinch, aprendimos que lo más importante no son los regalos, sino estar juntos.</p>
+        <ul>
+            <li>✅ +500 estudiantes felices</li>
+            <li>✅ 25 maestros dedicados</li>
+            <li>✅ 15 años de comunidad</li>
+        </ul>
+        <button class="btn-verde" onclick="saludarGrinch()">Conoce Más →</button>
+        <p id="mensaje-grinch" class="mensaje-grinch"></p>
+    </div>
+
+    <!-- FOTO SIN <img>, ES UN DIV CON FONDO -->
+    <div class="escuela-foto">
+        <div class="foto-escuela"></div>
+        <div class="tarjeta-flotante">💚 <b>¡Feliz Navidad!</b><br><small>Comunidad Unida</small></div>
+    </div>
+</section>
+
+<section id="actividades" class="actividades">
+    <h2>Actividades Navideñas 🎄</h2>
+    <p>Descubre todo lo que preparamos para ti esta Navidad</p>
+    <p class="tip">👆 Haz clic en una actividad para verla</p>
+    <div class="cards">
+        <div class="card" onclick="mostrarActividad('¡A ensayar villancicos! 🎤 Tu grupo puede ganar el premio al coro más alegre.')">
+            <div class="icono">🎤</div>
+            <h3>Concurso de Villancicos</h3>
+            <p>Canta con tu grupo y gana el premio al coro más alegre de la escuela.</p>
+        </div>
+        <div class="card" onclick="mostrarActividad('¡Prepara tu regalito! 🎁 Vas a hacer un nuevo amigo en el intercambio.')">
+            <div class="icono">🎁</div>
+            <h3>Intercambio de Regalos</h3>
+            <p>Comparte un detalle con un compañero y haz un nuevo amigo.</p>
+        </div>
+        <div class="card" onclick="mostrarActividad('¡Manos a la obra! 🎨 Trae material reciclado para crear adornos.')">
+            <div class="icono">🎨</div>
+            <h3>Taller de Manualidades</h3>
+            <p>Crea adornos navideños con material reciclado para decorar la escuela.</p>
+        </div>
+        <div class="card" onclick="mostrarActividad('¡Sonríe! 📸 El Grinch te está esperando para la foto del recuerdo.')">
+            <div class="icono">📸</div>
+            <h3>Foto con el Grinch</h3>
+            <p>Tómate la foto del recuerdo con nuestro invitado especial.</p>
+        </div>
+    </div>
+    <p id="detalle-actividad" class="detalle-actividad"></p>
+</section>
+
+<section id="registro" class="registro-seccion">
+    <div class="registro-info">
+        <span class="etiqueta">💚 COMUNIDAD</span>
+        <h2>Únete a Nuestra<br>Comunidad</h2>
+        <p>Regístrate para participar en todas las actividades navideñas. ¡Es gratis y para toda la familia!</p>
+        <div class="mini-stats">
+            <div><b>500+</b><br><small>Estudiantes</small></div>
+            <div><b>200+</b><br><small>Familias</small></div>
+            <div><b id="total-registrados">120</b><br><small>Registrados</small></div>
+        </div>
+        <!-- FOTO SIN <img>, ES UN DIV CON FONDO -->
+        <div class="foto-mini"></div>
+    </div>
+
+    <div class="form-box">
+        <h3>🎄 Formulario de Registro</h3>
+        <p>Completa tus datos para unirte</p>
+        <form id="form-registro">
+            <label>Nombre del alumno</label>
+            <input type="text" name="nombre_alumno" placeholder="Nombre del alumno" required>
+
+            <label>Grado</label>
+            <select name="grado" required>
+                <option value="">Elige tu grado</option>
+                <option>1°</option>
+                <option>2°</option>
+                <option>3°</option>
+                <option>4°</option>
+                <option>5°</option>
+                <option>6°</option>
+            </select>
+
+            <label>Grupo</label>
+            <input type="text" name="grupo" placeholder="Ej: A" required>
+
+            <label>Nombre del tutor</label>
+            <input type="text" name="nombre_tutor" placeholder="Nombre de mamá o papá" required>
+
+            <label>Teléfono</label>
+            <input type="tel" name="telefono" placeholder="Teléfono" required>
+
+            <label>
+                <input type="checkbox" name="asistira" checked> ¿Asistirá al evento?
+            </label>
+
+            <label>Mensaje para el Grinch</label>
+            <textarea name="mensaje" rows="3" placeholder="Ej: ¡El Grinch sí tiene corazón!"></textarea>
+
+            <button type="submit" class="btn-rojo-grande">¡Registrarme! 🎁</button>
+        </form>
+        <p id="mensaje-exito" class="mensaje-exito"></p>
+    </div>
+</section>
+
+<footer>
+    <p>🎄 El Grinch en Nuestra Escuela - Escuela Primaria Benito Juárez 💚</p>
+    <p>Hecho con amor para nuestra comunidad</p>
+</footer>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
